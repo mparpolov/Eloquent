@@ -1,0 +1,25 @@
+{
+  "name": "eloquent",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start-dev": "nodemon src/server.js",
+    "start-prod": "node src/server.js"
+  },
+  "keywords": [],
+  "author": "Mauricio Usatai",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^25.2.7",
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.9",
+    "redis": "^3.0.2"
+  }
+}
