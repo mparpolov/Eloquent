@@ -1,6 +1,6 @@
 const client = require('../database/redis');
 
-const digest = exclude => {
+const digest = (exclude = []) => {
   return new Promise(async (resolve, reject) => {
     const keywords = {};
 

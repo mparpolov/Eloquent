@@ -4,13 +4,17 @@ const StopwordsController = require('./controllers/StopwordsController');
 const DigestController = require('./controllers/DigestController');
 const HeadlinesController = require('./controllers/HeadlinesController');
 
+const stopwordsValidator = require('./validations/schemas/stopwords');
+const headlinesValidator = require('./validations/schemas/headlines');
+const digestValidator = require('./validations/schemas/digest');
+
 const router = express.Router();
 
 router.get('/config/stopwords/', StopwordsController.index);
-router.put('/config/stopwords/', StopwordsController.update);
+router.put('/config/stopwords/', stopwordsValidator, StopwordsController.update);
 
-router.get('/news/digest', DigestController.digest);
+router.post('/news/digest', digestValidator, DigestController.digest);
 
-router.get('/news/headlines', HeadlinesController.headlines);
+router.get('/news/headlines', headlinesValidator, HeadlinesController.headlines);
 
 module.exports = router;
